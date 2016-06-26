@@ -21,9 +21,9 @@ namespace Junk_Web_Client
             Console.WriteLine("Switching ip...");
              while (true) //Loop
             {
-                //jump to dead ip address :) so much junk
+                //jump to dead ip address so much junk
                 Random rnd = new Random();
-                string[] ip = new string[] { "https://81.196.2.213:80/", "https://203.66.159.44:80/", "https://123.57.190.51:80/","https://123.57.190.51:80/" };
+                string[] ip = new string[] { "https://81.196.2.213:80/", "https://203.66.159.44:80/", "https://123.57.190.51:80/","https://123.57.190.51:80/" , "https://199.16.220.249:80/", "https://202.47.236.251:80/","https://202.47.236.252/","https://203.66.159.46:80/"};
                 string res = ip[rnd.Next(ip.Length)];
                 WebProxy proxyObject = new WebProxy(res);
                 GlobalProxySelection.Select = proxyObject;
