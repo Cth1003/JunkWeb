@@ -1,4 +1,4 @@
-﻿//JunkWeb Client by Cth103
+//JunkWeb Client by Cth103
 //this following program is a test. feel free to edit it anytime.
 //START CODE
 //Usings
@@ -15,22 +15,35 @@ namespace Junk_Web_Client
 {
     class Program
     {
+
         //Main
         static void Main(string[] args)
         {
-            Console.WriteLine("Switching ip...");
-             while (true) //Loop
+            Console.WriteLine("IP switcher... start");
+            int i = 0;
+            while (i < 10)
             {
                 //jump to dead ip address so much junk
                 Random rnd = new Random();
-                string[] ip = new string[] { "https://81.196.2.213:80/", "https://203.66.159.44:80/", "https://123.57.190.51:80/","https://123.57.190.51:80/" , "https://199.16.220.249:80/", "https://202.47.236.251:80/","https://202.47.236.252/","https://203.66.159.46:80/"};
+                string[] ip = new string[] { "https://81.196.2.213:80/", "https://203.66.159.44:80/", "https://123.57.190.51:80/", "https://123.57.190.51:80/", "https://199.16.220.249:80/", "https://202.47.236.251:80/", "https://202.47.236.252/", "https://203.66.159.46:80/" };
                 string res = ip[rnd.Next(ip.Length)];
                 WebProxy proxyObject = new WebProxy(res);
                 GlobalProxySelection.Select = proxyObject;
+                i++;
+                if (i == 10)
+                {
+                    Web();
+                }
             }
 
-            }
-      
+        }
+
+        private static void Web()
+        {
+            //The Web
+            Console.WriteLine("end proxy.");
+            Console.ReadKey();
+        }
     }
-     
+
 }
