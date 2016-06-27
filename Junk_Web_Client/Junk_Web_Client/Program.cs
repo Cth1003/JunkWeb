@@ -41,8 +41,9 @@ namespace Junk_Web_Client
         private static void Web()
         {
             //The Web
-            Console.WriteLine("end proxy.");
-            Console.ReadKey();
+            Console.WriteLine("Proxy pause...");
+            System.Threading.Thread.Sleep(10000);
+            Main("-restarted")
         }
     }
 
