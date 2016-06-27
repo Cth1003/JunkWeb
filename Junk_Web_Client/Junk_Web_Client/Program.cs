@@ -47,6 +47,16 @@ namespace Junk_Web_Client
             System.Threading.Thread.Sleep(10000);
             Main("-restarted")
         }
+        private void Form1_FormClosing( object sender, FormClosingEventArgs e ) {
+             //DONT FORGET TO KILL THE PROXY
+            var window = MessageBox.Show( "This will end the proxy ! End anyways ?", buttons: MessageBoxButtons.YesNo );
+            if (window == DialogResult.No) e.Cancel = true;
+            else 
+            {
+	         proxyObject = null;
+	         e.Cancel = false;
+            }
+        }
     }
 
 }
