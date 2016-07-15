@@ -40,6 +40,11 @@ namespace Junk_Web_Client
                 Console.WriteLine("Switching to IP : "+res);
                 //add 1 to i
                 i++;
+                do {
+                while (! Console.KeyAvailable) {
+                Stop_Proxy()
+                }       
+                } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
                 //if i is 10. take a break
                 if (i == 10)
                 {
@@ -58,11 +63,13 @@ namespace Junk_Web_Client
             //reset the variable
             i = 0;
             System.Threading.Thread.Sleep(1000);
-            proxyObject = null;
-            Console.WriteLine("disable proxy");
-            System.Threading.Thread.Sleep(1000);
             Main("-restarted")
             
+        }
+        private static void Stop_Proxy()
+        {
+           proxyObject = null;
+           Console.WriteLine("disabled proxy");
         }
 	        
         }
