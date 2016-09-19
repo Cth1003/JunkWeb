@@ -63,7 +63,7 @@ namespace Junk_Web_Client
             //reset the variable
             i = 0;
             System.Threading.Thread.Sleep(1000);
-            Main("-restarted")
+            Main("-restarted");
             
         }
         private static void Stop_Proxy()
